@@ -1,0 +1,14 @@
+<!-- users/templates/users/doctor_dashboard.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Dashboard</title>
+</head>
+<body>
+    <h2>Doctor Dashboard</h2>
+    <p>Welcome, {{ request.user.first_name }}!</p>
+    <p>Email: {{ request.user.email }}</p>
+    <p>Address: {{ request.user.address_line1 }}, {{ request.user.city }}, {{ request.user.state }}, {{ request.user.pincode }}</p>
+    <!-- Add more details as needed -->
+</body>
+</html>
