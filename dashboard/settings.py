@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-yu8q5^=(o2fql^sb$z9g3s8)g%1nqi%^zwfjjhqtq+5-$z2vsb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fd5ee78d-0487-4456-98f3-5a61d17863a7-00-2oi1cdo1qlke.pike.replit.dev']
+ALLOWED_HOSTS = ['fd5ee78d-0487-4456-98f3-5a61d17863a7-00-2oi1cdo1qlke.pike.replit.dev','localhost']
 
 
 # Application definition
@@ -51,12 +51,16 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'dashboard.backends.EmailBackend'
+]
+
 ROOT_URLCONF = 'dashboard.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
