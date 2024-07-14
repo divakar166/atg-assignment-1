@@ -1,15 +1,21 @@
 <!-- users/templates/users/signup.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Signup</title>
-</head>
-<body>
-    <h2>Signup</h2>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Signup</button>
-    </form>
-</body>
-</html>
+{% extends "users/base.html" %}
+
+{% block title %}Signup{% endblock %}
+
+{% block content %}
+<div class="flex justify-center items-center h-screen">
+    <div class="w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-4">Signup</h2>
+        <form method="POST" enctype="multipart/form-data" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Signup
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
