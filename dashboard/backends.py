@@ -1,6 +1,9 @@
 from django.contrib.auth.backends import BaseBackend
 from users.models import User
 
+""" 
+For Overriding username authentication, It is using email
+"""
 class EmailBackend(BaseBackend):
     def authenticate(self, request, email=None, password=None, **kwargs):
         try:
